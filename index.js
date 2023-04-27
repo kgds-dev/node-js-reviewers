@@ -34,13 +34,16 @@ const server = http.createServer((req, res) => {
     Request URL: http://localhost:8080/profile > this is the endpoint accessed by the front end
   */
   if (req.method === 'POST' && req.url === '/profile') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, { 'Content-Type': 'text/plain' }); // Assignment: Research for http status codes and content types
     res.end('Data to be sent to the database using the profile route');
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Request Cannot Be Completed');
   }
 });
+
+//Error 404 means you have a defect on your declaration of routes/endpoints ** kindly check the spellings and declaration way **
+
 
 server.listen(portNumber, () => {
   console.log(`Server running at http://${hostName}:${portNumber}/`);
